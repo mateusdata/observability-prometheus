@@ -8,13 +8,11 @@ alerting:
   alertmanagers:
     - static_configs:
         - targets:
-            - "alertmanager.mateusdata.com.br" # URL do Alertmanager
+            - "alertmanager:alertmanager.mateusdata.com.br"
 
 # Regras de alerta
 rule_files:
-  - "rules.yml" # Referência ao arquivo de regras de alerta
-  # - "first_rules.yml"
-  # - "second_rules.yml"
+  - "alert_rules_prometheus.yml" 
 
 # Configuração de coleta de métricas
 scrape_configs:
