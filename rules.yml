@@ -1,0 +1,65 @@
+groups:
+- name: alertPrometheus
+  rules:
+  - alert: AltaQuantidadeAnomaliasIsolationForest
+    expr: analise_isolation_forest > 2
+    for: 10s
+    labels:
+      severity: critical
+    annotations:
+      summary: "Alta quantidade de anomalias detectadas pelo Isolation Forest"
+      description: "O número de anomalias detectadas pelo algoritmo Isolation Forest excedeu 9."
+
+  - alert: AltaQuantidadeAnomaliasDifference
+    expr: analise_difference > 100
+    for: 10s
+    labels:
+      severity: warning
+    annotations:
+      summary: "Alta quantidade de anomalias detectadas pelo analise_difference"
+      description: "O número de anomalias detectadas pelo algoritmo analise_difference excedeu 100."
+
+  - alert: AltaQuantidadeAnomaliasHarbinger
+    expr: analise_harbinger > 100
+    for: 10s
+    labels:
+      severity: warning
+    annotations:
+      summary: "Alta quantidade de anomalias detectadas pelo analise_harbinger"
+      description: "O número de anomalias detectadas pelo algoritmo analise_harbinger excedeu 100."
+
+  - alert: AltaQuantidadeAnomaliasMatrixProfile
+    expr: analise_matrix_profile > 100
+    for: 10s
+    labels:
+      severity: warning
+    annotations:
+      summary: "Alta quantidade de anomalias detectadas pelo analise_matrix_profile"
+      description: "O número de anomalias detectadas pelo algoritmo analise_matrix_profile excedeu 100."
+
+  - alert: AltaQuantidadeAnomaliasProphet
+    expr: analise_prophet > 100
+    for: 10s
+    labels:
+      severity: warning
+    annotations:
+      summary: "Alta quantidade de anomalias detectadas pelo analise_prophet"
+      description: "O número de anomalias detectadas pelo algoritmo analise_prophet excedeu 100."
+
+  - alert: AltaQuantidadeAnomaliasZScore
+    expr: analise_zscore > 100
+    for: 10s
+    labels:
+      severity: warning
+    annotations:
+      summary: "Alta quantidade de anomalias detectadas pelo analise_zscore"
+      description: "O número de anomalias detectadas pelo algoritmo analise_zscore excedeu 100."
+
+  - alert: AltaQuantidadeAnomaliasRangeStd
+    expr: range_std > 100
+    for: 10s
+    labels:
+      severity: warning
+    annotations:
+      summary: "Alta quantidade de anomalias detectadas pelo range_std"
+      description: "O número de anomalias detectadas pelo algoritmo range_std excedeu 100."

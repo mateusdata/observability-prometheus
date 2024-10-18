@@ -8,10 +8,11 @@ alerting:
   alertmanagers:
     - static_configs:
         - targets:
-            - "alertmanager:9093"
+            - "alertmanager.mateusdata.com.br:9093" # URL do Alertmanager
 
 # Regras de alerta
 rule_files:
+  - "rules.yml" # Referência ao arquivo de regras de alerta
   # - "first_rules.yml"
   # - "second_rules.yml"
 
